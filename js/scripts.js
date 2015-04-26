@@ -1,12 +1,16 @@
-var inicio=function () {
-	$(".cantidad").keyup(function(e){
-		if($(this).val()!=''){
-			if(e.keyCode==13){
+var inicio=function () 
+{   alert('Prueba');
+	$(".cantidad").keyup(function(e)
+        {
+		if($(this).val()!='')
+                {
+			if(e.keyCode==13)
+                        {
 				var id=$(this).attr('data-id');
 				var precio=$(this).attr('data-precio');
 				var cantidad=$(this).val();
 				$(this).parentsUntil('.producto').find('.subtotal').text('Subtotal: '+(precio*cantidad));
-				$.post('./js/modificarDatos.php',{
+				$.post('../php/modificarDatos.php',{
 					Id:id,
 					Precio:precio,
 					Cantidad:cantidad
@@ -16,5 +20,5 @@ var inicio=function () {
 			}
 		}
 	});
-}
+};
 $(document).on('ready',inicio);

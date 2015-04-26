@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include './php/conexion.php';
+	include './conexion.php';
 	if(isset($_SESSION['carrito'])){
 		if(isset($_GET['id'])){
 					$arreglo=$_SESSION['carrito'];
@@ -65,15 +65,19 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>Carrito de Compras</title>
-	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilos.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript"  src="./js/scripts.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript"  src="../js/jquery.js"></script>
+        <script type="text/javascript"  src="../js/jquery.numeric.js"></script>
+        <script type="text/javascript"  src="../js/scripts.js"></script>
+        <script type="text/javascript"  href="../js/scripts.js"></script>
 </head>
 <body>
 	<header>
-		<img src="./imagenes/logo.png" id="logo">
-		<a href="./carritodecompras.php" title="ver carrito de compras">
-			<img src="./imagenes/carrito.png">
+            <img src="../imagenes/logo.png" id="logo">
+            <a href="carritodecompras.php" title="ver carrito de compras">
+                <img src="../imagenes/carrito.png">
 		</a>
 	</header>
 	<section>
@@ -88,7 +92,7 @@
 	?>
 				<div class="producto">
 					<center>
-						<img src="./productos/<?php echo $datos[$i]['Imagen'];?>"><br>
+                                            <img src="../productos/<?php echo $datos[$i]['Imagen'];?>"><br>
 						<span ><?php echo $datos[$i]['Nombre'];?></span><br>
 						<span>Precio: <?php echo $datos[$i]['Precio'];?></span><br>
 						<span>Cantidad: 
@@ -110,11 +114,11 @@
 			}
 			echo '<center><h2 id="total">Total: '.$total.'</h2></center>';
 			if($total!=0){
-                            echo '<center><a href="./compras/compras.php" class="aceptar">Comprar</a></center>';
+                            echo '<center><a href="compras.php" class="aceptar">Comprar</a></center>';
 			}
 			
 		?>
-            <center><a href="php/Tienda.php">Ver catalogo</a></center>
+            <center><a href="Tienda.php">Ver catalogo</a></center>
 		
 		
 		
