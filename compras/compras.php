@@ -23,6 +23,6 @@ include "../conexion.php";
 				)")or die(mysql_error());
 		}
 		unset($_SESSION['carrito']);
-		header("Location: ../admin.php");
+		header("Location: ../bodega.php");
 
 ?>
