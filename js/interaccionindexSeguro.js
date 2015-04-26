@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 alert("crearFormulario");
-var serviceURL = "http://localhost/TiendaNet/php/";
+var serviceURL = "http://localhost/Tienda/php/";
 var pagina;
 $(document).ready(inicializar);
 
@@ -61,7 +61,7 @@ function AutenticarUsuario(evento)
 			data: datosuser,
 			type: 'POST',
 			dataType: 'json',
-			url: 'http://localhost/TiendaNet/php/Login_usuario.php',
+			url: 'http://localhost/Tienda/php/Login_usuario.php',
 			success: function(data)
 			{					
 				var datos = data.items;
