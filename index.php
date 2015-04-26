@@ -18,8 +18,8 @@
     </head>
     <body style="background:#ccc;">
         <center>
-            <div id="principal">
-                <div id="interno">
+            <div class="principal">
+                <div class="interno">
                     <header class="contenidoheader">
                         <div class="cabezote">
                         </div>
