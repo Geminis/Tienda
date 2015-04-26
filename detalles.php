@@ -8,15 +8,15 @@
 </head>
 <body>
 	<header>
-		<img src="./imagenes/logo.png" id="logo">
-		<a href="./carritodecompras.php" title="ver carrito de compras">
-			<img src="./imagenes/carrito.png">
+            <img src="imagenes/logo.png" id="logo">
+            <a href="carritodecompras.php" title="ver carrito de compras">
+                <img src="imagenes/carrito.png">
 		</a>
 	</header>
 	<section>
 		
 	<?php
-		include 'conexion.php';
+		include './php/conexion.php';
 		$re=mysql_query("select * from productos where id=".$_GET['id'])or die(mysql_error());
 		while ($f=mysql_fetch_array($re)) {
 		?>

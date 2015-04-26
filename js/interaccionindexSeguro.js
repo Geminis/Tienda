@@ -72,7 +72,7 @@ function AutenticarUsuario(evento)
 					{			
 						var v = hex_md5(usuario);
 						sessionStorage.setItem("ced", v);
-						location.href="Tienda.php";	
+						location.href="./php/Tienda.php";	
 						alert("¡Felicidades¡ Se ha Logueado correctamente");										
 					}
 				});

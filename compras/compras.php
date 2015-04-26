@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../conexion.php";
+include "../php/conexion.php";
 		$arreglo=$_SESSION['carrito'];
 		$numeroventa=0;
 		$re=mysql_query("select * from compras order by numeroventa DESC limit 1") or die(mysql_error());	
