@@ -1,8 +1,6 @@
 <?php
-        include './conexion.php';
-        
-           
-?>
+echo 'estoy en ventas';
+    ?>
 <!doctype html>
 <html>
     <head> 
@@ -32,44 +30,32 @@
                         </header>
                             <nav class="nav">
                                 <ul class="menu">
-                                    <li><a href="Tienda.php" id="Registro">Registro Compras</a></li>
+                                    <li><a href="#Registros" id="Registro">Registro Compras</a></li>
                                     <li><a href="Ventas.php" id="Ventas">Registro Ventas</a></li>
-                                    <li><a href="Bodega.php" id="Inventario">Inventario</a></li>
+                                    <li><a href="Bodega.php" id="Ventas">Inventario</a></li>
                                     <li><a href="#Pefil" id="Pefil">Pefil</a></li>
-                                    <li><a href="index.php" >Cerrar Sesion</a></li>
+                                    <li><a href="../index.php" >Cerrar Sesion</a></li>
                                 </ul>
                             </nav>
                             <section class="content">
                                 <section class="sectiontienda">
-                                    <div class="encabezado2">Bodega O Invetario</div>
-                                        	<table border="0px" width="100%">	
-		<tr>
-			<th>Imagen</th>
-			<th>Nombre</th>
-			<th>Precio</th>
-			<th>Cantidad</th>
-			<th>Subtotal</th>
-		</tr>	
-
-		<?php
-			$re=mysql_query("select * from compras");
-			$numeroventa=0;
-			while ($f=mysql_fetch_array($re)) {
-					if($numeroventa	!=$f['numeroventa']){
-						echo '<tr><th>Compra Número: '.$f['numeroventa'].' </th></tr>';
-					}
-					$numeroventa=$f['numeroventa'];
-					echo '<tr>
-						<th><img src="../productos/'.$f['imagen'].'" width="100px" heigth="100px" /></td>
-						<th>'.$f['nombre'].'</th>
-						<th>'.$f['precio'].'</th>
-						<th>'.$f['cantidad'].'</th>
-						<th>'.$f['subtotal'].'</th>
-
-					</tr>';
-			}
-		?>
-	</table>
+                                    <?php
+                                        include './conexion.php';
+                                        $re=mysql_query("select * from productos")or die(mysql_error());
+                                            while ($f=mysql_fetch_array($re)) 
+                                            {
+                                                ?>
+                                                    <div class="producto">
+                                                            <center>
+                                                                <img src="../productos/<?php echo $f['imagen'];?>"><br>
+                                                                <span><?php echo $f['nombre'];?></span><br>
+                                                                 <span><?php echo $f['precio'];?></span><br>
+                                                                 <a class="añadir" style="color:#4A4A4A"href="./carritodecompras.php?id=<?php  echo $f['id'];?>">Añadir al Carrito</a>       
+                                                            </center>
+                                                    </div>
+                                                <?php
+                                            }
+                                    ?>
                                 </section>
                             </section>
                             <footer class="piedepagina">
@@ -82,4 +68,6 @@
             </center>
 	</body>
 </html>
-
+	
+	
+        
